@@ -1,0 +1,86 @@
+*, *::before,*::after {
+    box-sizing: border-box;
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh; 
+    
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.container {
+    max-width: 80%;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#question {
+    padding: 16px;
+    font-size: 16px;
+}
+
+#timer {
+    display: flex;
+    align-content: flex-end;
+}
+
+.button {
+    background-color:blueviolet;
+    color:white;
+    border-radius: 5px;
+    outline: none;
+    margin: 2px 0px 2px 16px;
+}
+
+.button:hover {
+    border-color: white;
+}
+
+#answer-buttons {
+    display: flex;
+    flex-direction: column;
+    width:max-content;
+    align-items: flex-start;
+
+}
+
+.start-btn, .play-again-btn {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 16px;
+    background-color: blueviolet;
+    color: white;
+}
+
+.start-btn:hover, .play-again-btn:hover {
+    border-color: white; 
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
