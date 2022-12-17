@@ -10,21 +10,9 @@
 <body>
     <section class="container">
         <h1>Code Quiz Highscores</h1>
-        <ul id="high-scores-list"></ul>
+        <ol id="high-scores-list"></ol>
         <button class="play-again-btn">Play Again</button>
-        <script>
-            const initials = localStorage.getItem('initials');
-            const score = localStorage.getItem('score');
-
-            const li = document.createElement('li');
-            li.innerText = `${initials}: ${score}`;
-            const highScoresList = document.querySelector('#high-scores-list');
-            highScoresList.appendChild(li);
-            const button = document.querySelector(".play-again-btn");
-            button.addEventListener('click', () => {
-                window.location.href = 'index.html';
-            });
-        </script>
+        <script src="./assets/highscores.js"></script>
     </section>
 </body>
 </html>
