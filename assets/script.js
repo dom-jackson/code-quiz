@@ -14,6 +14,8 @@ const questionEl = document.getElementById('question')
 const answerButtonsEl = document.getElementById ('answer-buttons')
 const timerEl = document.getElementById("timer");
 
+var scores = JSON.parse(localStorage.getItem("scores")) || []
+
 let questionsShuffled, currentQuestion;
 let timeLeft, timerInterval;
 
@@ -39,6 +41,7 @@ function startTimer() {
       if (timeLeft === 0) {
         clearInterval(timerInterval);
         timerEl.innerText = "Time's up!";
+        document.location="/highscores.html";
       }
     }, 1000);
   }
@@ -89,9 +92,11 @@ function selectAnswer(e) {
 }
 
 function saveScore() {
-    localStorage.setItem('score', timeLeft);
+    scores.push(localStorage.getItem("initials") + ": " + localStorage.getItem("score"))
+    localStorage.setItem('scores', JSON.stringify(scores));
     clearInterval(timerInterval);
     timerEl.innerText = "Game Over!";
+    questionEl.innerText = `Your score is ${timeLeft}`;
     createForm();
 }
 
@@ -102,6 +107,7 @@ function createForm() {
     input.placeholder = 'Enter your initials';
     form.appendChild(input);
     const button = document.createElement('button');
+    button.setAttribute('style','background-color: blueviolet; color: white; border-radius: 5px');
     button.innerText = 'Submit';
     form.appendChild(button);
     form.addEventListener('submit', event => {
@@ -114,6 +120,8 @@ function createForm() {
     });
     document.body.appendChild(form);
   }
+
+  
 
 const questions = [
     {
