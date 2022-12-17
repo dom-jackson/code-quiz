@@ -15,6 +15,10 @@ body {
     
 }
 
+.left {
+    width: 80%;
+}
+
 header {
     display: flex;
     flex-direction: column;
@@ -22,6 +26,9 @@ header {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 80%;
     padding: 16px;
     border-radius: 8px;
